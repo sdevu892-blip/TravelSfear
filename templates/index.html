@@ -1,0 +1,35 @@
+{% extends "base.html" %}{% block title %}TravelSfear{% endblock %}
+{% block content %}
+<section class="hero rounded-4 p-5 text-white mb-5">
+<div class="row align-items-center">
+<div class="col-lg-7">
+<h1 class="display-4 fw-bold">Explore Kerala with TravelSfear</h1>
+<p class="lead">AI-powered travel assistance for places, restaurants, routes, weather and emergency help.</p>
+<a class="btn btn-light btn-lg me-2" href="{{ url_for('places') }}">Explore Places</a>
+<a class="btn btn-outline-light btn-lg" href="{{ url_for('chatbot') }}">Ask AI</a>
+</div>
+</div>
+</section>
+<h2 class="mb-3">Popular Places</h2>
+<div class="row g-4 mb-5">
+{% for p in places %}
+<div class="col-md-6 col-lg-4">
+<div class="card h-100 shadow-sm">
+<img src="{{ p.image }}" class="card-img-top place-img">
+<div class="card-body">
+<span class="badge bg-primary mb-2">{{ p.category }}</span>
+<h5>{{ p.name }}</h5><p>{{ p.location }}</p>
+<a href="{{ url_for('places') }}?q={{ p.name }}" class="btn btn-outline-primary">View</a>
+</div></div></div>
+{% endfor %}
+</div>
+<h2 class="mb-3">Restaurants</h2>
+<div class="row g-4">
+{% for r in restaurants %}
+<div class="col-md-6 col-lg-3"><div class="card h-100 shadow-sm">
+<img src="{{ r.image }}" class="card-img-top place-img">
+<div class="card-body"><h5>{{ r.name }}</h5><p>{{ r.cuisine }} • ₹{{ r.price|int }}</p>
+<span>⭐ {{ r.rating }}</span></div></div></div>
+{% endfor %}
+</div>
+{% endblock %}

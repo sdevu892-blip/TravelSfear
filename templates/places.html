@@ -1,0 +1,18 @@
+{% extends "base.html" %}{% block title %}Tourist Places{% endblock %}
+{% block content %}
+<h1>Tourist Places</h1>
+<form class="row g-2 mb-4">
+<div class="col-md-8"><input class="form-control" name="q" value="{{ q }}" placeholder="Search Kerala places"></div>
+<div class="col-md-2"><button class="btn btn-primary w-100">Search</button></div>
+</form>
+<div class="row g-4">
+{% for p in places %}
+<div class="col-md-6 col-lg-4"><div class="card h-100 shadow-sm">
+<img src="{{ p.image }}" class="card-img-top place-img">
+<div class="card-body"><span class="badge bg-primary">{{ p.category }}</span><h5 class="mt-2">{{ p.name }}</h5>
+<p class="text-muted">{{ p.location }}</p><p>{{ p.description }}</p>
+<form method="post" action="{{ url_for('favourite', place_id=p.id) }}"><button class="btn btn-outline-danger">♡ Save</button></form>
+</div></div></div>
+{% else %}<p>No places found.</p>{% endfor %}
+</div>
+{% endblock %}

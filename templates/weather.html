@@ -1,0 +1,11 @@
+{% extends "base.html" %}{% block title %}Weather{% endblock %}
+{% block content %}
+<div class="auth-card mx-auto">
+<h2>🌦️ Kerala Weather</h2>
+<form id="weatherForm" class="d-flex gap-2 mt-3">
+<input id="city" class="form-control" value="Kochi" placeholder="City">
+<button class="btn btn-primary">Check</button>
+</form>
+<div id="weatherResult" class="mt-4"></div>
+</div>
+{% endblock %}

@@ -1,0 +1,10 @@
+{% extends "base.html" %}{% block title %}Profile{% endblock %}
+{% block content %}
+<div class="auth-card mx-auto"><h2>My Profile</h2>
+<form method="post">
+<label class="form-label mt-3">Name</label><input class="form-control" name="name" value="{{ user.name }}">
+<label class="form-label mt-3">Travel budget (₹)</label><input class="form-control" name="budget" type="number" value="{{ user.budget }}">
+<label class="form-label mt-3">Preferences</label><textarea class="form-control" name="preferences" placeholder="Vegetarian, beaches, adventure...">{{ user.preferences }}</textarea>
+<button class="btn btn-primary mt-3 w-100">Save Profile</button>
+</form></div>
+{% endblock %}

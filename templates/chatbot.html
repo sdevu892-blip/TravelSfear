@@ -1,0 +1,12 @@
+{% extends "base.html" %}{% block title %}AI Chatbot{% endblock %}
+{% block content %}
+<div class="chat-card">
+<h1>🤖 TravelSfear AI</h1>
+<p class="text-muted">Ask about Kerala travel, restaurants, places, routes or emergencies.</p>
+<div id="chatBox" class="chat-box mb-3"></div>
+<form id="chatForm" class="d-flex gap-2">
+<input id="message" class="form-control" placeholder="Example: restaurant under ₹500 near Fort Kochi" required>
+<button class="btn btn-primary">Send</button>
+</form>
+</div>
+{% endblock %}
