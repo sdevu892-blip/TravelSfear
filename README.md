@@ -1,6 +1,6 @@
 # TravelSfear Flask Project
 
-## screenshot
+## Screenshot
 ![TravelSfear Home page](home.png)
 
 A BCA-friendly Kerala tourism web application built with Flask, SQLite/MySQL-ready database, Bootstrap, HTML, CSS and JavaScript.
